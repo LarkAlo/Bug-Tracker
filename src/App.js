@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Login from "./Structure/Login/Login";
 import SignUp from "./Structure/SignUp/SignUp";
@@ -8,12 +8,13 @@ import TicketsPage from "./Structure/TicketPage/TicketPage";
 import AssignedPage from "./Structure/AssignedPage/AssignedPage";
 import OrganizationsPage from "./Structure/OrganizationsPage/OrganizationsPage";
 import OneTicketPage from "./Structure/OneTicketPage/OneTicketPage";
+import Sidebar from "./Features/SideBar/SideBar";
 
 export default function App() {
   return (
     <div>
       <Router>
-        <Switch>
+        <Route>
           <Route exact path="/login">
             <Login />
           </Route>
@@ -23,7 +24,7 @@ export default function App() {
           <Route path="/">
             <Sidebar />
           </Route>
-        </Switch>
+        </Route>
         <Route exact path="/">
           <Dashboard />
         </Route>
@@ -36,7 +37,7 @@ export default function App() {
         <Route exact path="/organizations">
           <OrganizationsPage />
         </Route>
-        <Route exact path="/tickets/:id" />
+        <Route exact path="/tickets/:id" component={OneTicketPage} />
       </Router>
     </div>
   );
