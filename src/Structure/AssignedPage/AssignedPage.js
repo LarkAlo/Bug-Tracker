@@ -54,6 +54,7 @@ export default function AssignedPage() {
   return (
     <div className="assignedPage">
       <h1 style={{ marginBottom: "20px" }}> Tickets Assigned to Me</h1>
+      <SearchFilter />
       <div className="dashboardCard">
         <div className="priority-navigator-container" id="myDIV">
           <div
